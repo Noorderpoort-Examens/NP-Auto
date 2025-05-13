@@ -18,7 +18,7 @@ class AdminMiddleware
             return $next($request);
         }
 
-        if (!Auth::check() || !Auth::user()->hasRole(['admin', 'writer'])) {
+        if (!Auth::check() || !Auth::user()->hasRole(['admin', 'mechanic'])) {
             abort(403, 'Je hebt geen toegang tot deze pagina.');
         }
 
