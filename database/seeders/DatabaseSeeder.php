@@ -22,10 +22,21 @@ class DatabaseSeeder extends Seeder
             'password' => 'development'
         ]);
 
-        $role = Role::create(['name' => 'admin']);
-        $permission = Permission::create(['name' => 'manage users']);
+        $permissionNames = [
+            'manage users',
+            'manage roles',
+            'manage permissions',
+        ];
 
-        $role->givePermissionTo($permission);
+        $permissions = [];
+
+        foreach ($permissionNames as $name) {
+            $permission = Permission::create(['name' => $name]);
+            $permissions[] = $permission;
+        }
+
+        $role = Role::create(['name' => 'admin']);
+        $role->syncPermissions($permissions);
         $user->assignRole($role);
     }
 }
