@@ -14,6 +14,10 @@ export default {
         'np-dark': 'rgba(0, 0, 0)',
         'np-white': 'rgba(255, 255, 255)',
       },
+      fontFamily: {
+        opensans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+        roboto: ['Roboto', ...defaultTheme.fontFamily.sans],
+      },
     },
   },
   plugins: [],
