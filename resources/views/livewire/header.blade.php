@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="text-white font-opensans">
+<nav x-data="{ open: false }" class="text-white font-opensans container-shadow">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
             <div class="flex items-center">
@@ -43,7 +43,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden menu-shadow">
+    <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden container-shadow">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                 {{ __('Home') }}

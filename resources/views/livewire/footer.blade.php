@@ -1,4 +1,4 @@
-<footer class="bg-np-white rounded-lg shadow-sm">
+<footer class="bg-np-white rounded-lg shadow-sm container-shadow">
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span class="text-sm text-np-dark sm:text-center">© 2025 <a href="https://flowbite.com/"
                 class="hover:underline">NP-Auto</a>
