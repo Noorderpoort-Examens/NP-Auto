@@ -4,7 +4,6 @@ namespace App\Filament\Resources\OccasionResource\Pages;
 
 use App\Filament\Resources\OccasionResource;
 use Carbon\Carbon;
-use Filament\Actions;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Support\Facades\Http;
 
@@ -15,12 +14,12 @@ class CreateOccasion extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        //lisenceplates in all uppercase
-        $plate = strtoupper(str_replace(' ', '', $data['liscenceplate']));
+        //lisenceplates in all uppercase, set to the same standard for saving
+        $data['liscenceplate'] = strtoupper(str_replace('-', '', $data['liscenceplate']));
 
         //api calls first up
-        $apiDataGeneral = Http::get("https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken={$plate}")->json();
-        $apiDataFuel = Http::get("https://opendata.rdw.nl/resource/8ys7-d773.json?kenteken={$plate}")->json();
+        $apiDataGeneral = Http::get("https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken={$data['liscenceplate']}")->json();
+        $apiDataFuel = Http::get("https://opendata.rdw.nl/resource/8ys7-d773.json?kenteken={$data['liscenceplate']}")->json();
 
         //check for actual data
         if (!empty($apiDataGeneral[0]) && !empty($apiDataFuel[0])) {

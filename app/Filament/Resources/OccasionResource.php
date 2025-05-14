@@ -3,9 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\OccasionResource\Pages;
-use App\Filament\Resources\OccasionResource\RelationManagers;
 use App\Models\Occasion;
-use Filament\Forms;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\FileUpload;
@@ -18,8 +16,6 @@ use Filament\Tables\Columns\CheckboxColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class OccasionResource extends Resource
 {
@@ -33,7 +29,12 @@ class OccasionResource extends Resource
             ->schema([
                 TextInput::make('liscenceplate')
                     ->label('Kenteken')
-                    ->required(),
+                    ->required()
+                    ->dehydrateStateUsing(fn ($state) => strtoupper(str_replace('-', '', $state))) //incase instructions arent read
+                    ->rule(['regex:/^((([0-9]{3}(?![0-9]))|([a-z]{3}(?![a-z])))|(([0-9]{1,2})|([a-z]{1,2}))|-){6,}/']) // replace later
+                    ->helperText('Format XX123X')
+                    ->validationAttribute('kenteken')
+                    ->readOnly(fn (string $context) => $context === 'edit'),
                 TextInput::make('advertisingtitle')
                     ->label('Advertentie Titel')
                     ->required(),
