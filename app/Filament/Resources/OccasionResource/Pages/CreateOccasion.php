@@ -35,7 +35,7 @@ class CreateOccasion extends CreateRecord
             $data['carbody'] = $dataGeneral['inrichting'] ?? null;
             $data['doors'] = (int) ($dataGeneral['aantal_deuren'] ?? 0);
             $data['seats'] = (int) ($dataGeneral['aantal_zitplaatsen'] ?? 0);
-            $data['apk'] = Carbon::createFromFormat('Ymd', $dataGeneral['vervaldatum_apk'] ?? '')->toDateString();
+            $data['apk'] = Carbon::createFromFormat('Ymd', $dataGeneral['vervaldatum_apk'] ?? '')->toDateString(); //carbon instance date item
             $data['cylindercapacity'] = (int) ($dataGeneral['cilinderinhoud'] ?? 0);
             $data['weight'] = (int) ($dataGeneral['massa_rijklaar'] ?? 0);
             $data['fuelefficiency'] = $dataGeneral['zuinigheidsclassificatie'] ?? null;
@@ -47,7 +47,6 @@ class CreateOccasion extends CreateRecord
             $data['fuelconsumption'] = (int) $dataFuel['brandstofverbruik_gecombineerd'] ?? null;
         }
 
-        //return filled out data
         return $data;
     }
 }

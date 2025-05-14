@@ -69,7 +69,6 @@ class OccasionResource extends Resource
                     ->label('Afbeeldingen')
                     ->multiple()
                     ->image()
-                    ->previewable() // <— this enables thumbnail previews
                     ->directory('occasions')
                     ->reorderable(),
             ]);
