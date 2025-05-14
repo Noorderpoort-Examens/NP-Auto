@@ -1,2 +1,18 @@
 {
+    "User Management": "Gebruikers beheer",
+    "Users": "Gebruikers",
+    "User": "Gebruiker",
+    "Roles": "Rollen",
+    "Role": "Rol",
+    "Permissions": "Permissies",
+    "Permission": "Permissie",
+    "Mechanics": "Monteurs",
+    "Mechanic": "Monteur",
+
+    "Name": "Naam",
+    "Password": "Wachtwoord",
+    "Created at": "Aangemaakt op",
+
+    "Insufficient permissions": "Je hebt hier geen permissies voor"
+
 }
