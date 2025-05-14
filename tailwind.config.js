@@ -9,7 +9,11 @@ export default {
   ],
   theme: {
     extend: {
-      
+      colors: {
+        'np-yellow': 'rgba(232, 199,  0)',
+        'np-dark': 'rgba(0, 0, 0)',
+        'np-white': 'rgba(255, 255, 255)',
+      },
     },
   },
   plugins: [],
