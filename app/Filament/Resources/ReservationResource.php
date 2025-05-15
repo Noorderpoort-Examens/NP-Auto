@@ -23,6 +23,16 @@ class ReservationResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getPluralLabel(): ?string
+    {
+        return __('Reservations');
+    }
+
+    public static function getLabel(): ?string
+    {
+        return __('Reservation');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -42,6 +52,7 @@ class ReservationResource extends Resource
                     ->relationship('occasion', 'name')
                     ->options(Occasion::all()->pluck('licenceplate', 'id'))
                     ->preload()
+                    ->unique(ignoreRecord: true)
                     ->required(),
             ]);
     }
@@ -54,7 +65,7 @@ class ReservationResource extends Resource
                     ->searchable(),
                 TextColumn::make('lastname')
                     ->searchable(),
-                TextColumn::make('occasion.liscenceplate')
+                TextColumn::make('occasion.licenceplate')
                     ->searchable(),
             ])
             ->filters([
@@ -62,6 +73,7 @@ class ReservationResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
