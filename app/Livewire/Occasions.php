@@ -14,7 +14,9 @@ class Occasions extends Component
 
     public function render()
     {
-        $occasions = Occasion::all();
+        $occasions = $this->is_archive
+            ? Occasion::orderBy('created_at', 'desc')->paginate(12) // For archive
+            : Occasion::orderBy('created_at', 'desc')->take(4)->get(); // For home
 
         return view('livewire.occasions', compact('occasions'));
     }

@@ -11,7 +11,7 @@
                     <livewire:filter-modal-occasions />
                 </div>
             </div>
-            <livewire:occasions />
+            <livewire:occasions :is_archive="true" />
         </div>
     </section>
 @endsection
