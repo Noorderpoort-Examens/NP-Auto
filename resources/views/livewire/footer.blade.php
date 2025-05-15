@@ -1,6 +1,5 @@
 <footer class="bg-np-white rounded-lg shadow-sm container-shadow">
-    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full  p-4 md:flex md:items-center md:justify-between">
         <span class="text-sm text-np-dark sm:text-center">
             © 2025
             <a href="{{ route('home') }}" class="hover:underline">NP-Auto</a>
