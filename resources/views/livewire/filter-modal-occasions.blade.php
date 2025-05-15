@@ -20,7 +20,7 @@
             <div class="flex items-start justify-between">
                 <h3 class="text-lg font-medium text-np-white">Filters</h3>
                 <button type="button" wire:click="closeModal"
-                    class="ml-auto inline-flex items-center rounded-lg p-1.5 text-sm text-np-dark hover:bg-gray-600">
+                    class="ml-auto inline-flex items-center rounded-lg p-1.5 text-sm text-np-white hover:bg-gray-600">
                     <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
