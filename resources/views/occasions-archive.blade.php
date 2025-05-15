@@ -12,6 +12,10 @@
                             <div
                                 class="relative overflow-hidden rounded-lg transform transition duration-150 ease-in-out group-hover:scale-110">
                                 <img src="{{ asset('img/a1_1.jpeg') }}" alt="logo" class="block w-full rounded-lg">
+                                <div
+                                    class="absolute top-0 left-0 bg-red-600 text-white text-sm font-bold py-1 px-3 z-10 rounded">
+                                    Verkocht
+                                </div>
                             </div>
                         </a>
 
