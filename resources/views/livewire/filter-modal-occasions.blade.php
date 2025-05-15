@@ -1,6 +1,6 @@
 <div class="relative inline-block w-full">
     <button wire:click="openModal" type="button"
-        class="flex items-center justify-center w-full rounded-lg border px-3 py-2 text-sm md:text-base lg:text-lg font-medium text-np-white border-gray-600 bg-np-dark hover:bg-gray-700">
+        class="flex items-center justify-center w-full rounded-lg border px-3 py-2 text-sm md:text-base lg:text-lg font-medium text-np-dark border-gray-600 bg-np-white hover:bg-np-dark/40">
         <svg class="-ms-0.5 me-2 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
             fill="none" viewBox="0 0 24 24">
             <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
@@ -16,11 +16,11 @@
 
     @if ($isOpen)
         <div
-            class="absolute z-50 mt-2 w-full sm:w-max right-0 bg-np-dark border border-gray-600 rounded-lg shadow-lg p-4">
+            class="absolute z-50 mt-2 w-full sm:w-max right-0 border container-shadow bg-np-dark/50 border-gray-600 rounded-lg shadow-lg p-4">
             <div class="flex items-start justify-between">
-                <h3 class="text-lg font-medium text-white">Filters</h3>
+                <h3 class="text-lg font-medium text-np-white">Filters</h3>
                 <button type="button" wire:click="closeModal"
-                    class="ml-auto inline-flex items-center rounded-lg p-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-600">
+                    class="ml-auto inline-flex items-center rounded-lg p-1.5 text-sm text-np-dark hover:bg-gray-600">
                     <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -31,7 +31,7 @@
 
             <form wire:submit.prevent="closeModal" class="mt-4 space-y-4">
                 <div>
-                    <h6 class="text-sm font-medium text-white mb-2">Status</h6>
+                    <h6 class="text-sm font-medium text-np-white mb-2">Status</h6>
                     <ul class="space-y-2">
                         <li class="flex items-center">
                             <input id="all" type="radio" name="status" checked class="h-4 w-4" />
