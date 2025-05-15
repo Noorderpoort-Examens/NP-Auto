@@ -25,11 +25,11 @@
 
                         <div class="pt-6">
                             <p
-                                class="text-sm md:text-base lg:text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">
+                                class="text-sm md:text-base lg:text-lg font-semibold leading-tight hover:underline text-white">
                                 Audi A3 Sportback
                             </p>
                             <p
-                                class="text-sm md:text-base lg:text-lg font-semibold leading-tight text-gray-900 hover:underline dark:text-white">
+                                class="text-sm md:text-base lg:text-lg font-semibold leading-tight hover:underline text-white">
                                 €20.000
                             </p>
 
