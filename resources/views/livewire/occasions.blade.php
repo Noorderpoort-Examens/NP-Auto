@@ -15,7 +15,7 @@
                 $model = ucfirst(strtolower($occasion->model));
             @endphp
 
-            <div class="relative rounded-lg border p-6 shadow-sm border-gray-700 bg-np-dark/40 h-max">
+            <div class="relative rounded-lg p-6 shadow-sm bg-np-dark/90 h-max">
                 <a href="#" class="block group">
                     <div class="relative rounded-lg transform transition duration-150 ease-in-out group-hover:scale-110">
                         @if ($firstImage)
