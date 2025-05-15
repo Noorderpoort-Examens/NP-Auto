@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\OccasionResource\Pages;
 use App\Models\Occasion;
+use App\Rules\ValidateLicencePlate;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\FileUpload;
@@ -27,47 +28,36 @@ class OccasionResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('liscenceplate')
-                    ->label('Kenteken')
+                TextInput::make('licenceplate')
                     ->required()
-                    ->dehydrateStateUsing(fn ($state) => strtoupper(str_replace('-', '', $state))) //incase instructions arent read
-                    ->rule(['regex:/^((([0-9]{3}(?![0-9]))|([a-z]{3}(?![a-z])))|(([0-9]{1,2})|([a-z]{1,2}))|-){6,}/']) // replace later
+                    ->dehydrateStateUsing(fn ($state) => strtoupper(str_replace('-', '', $state))) //enforce format
+                    ->rule(new ValidateLicencePlate)
                     ->helperText('Format XX123X')
-                    ->validationAttribute('kenteken')
                     ->readOnly(fn (string $context) => $context === 'edit'),
                 TextInput::make('advertisingtitle')
-                    ->label('Advertentie Titel')
                     ->required(),
                 TextInput::make('askprice')
-                    ->label('Vraag prijs')
                     ->integer()
                     ->minValue(0)
                     ->maxValue(2000000)
                     ->required(),
                 TextInput::make('mileage')
-                    ->label('Kilometerstand')
                     ->integer()
                     ->minValue(0)
                     ->maxValue(2000000)
                     ->required(),
                 TextInput::make('transmission')
-                    ->label('Transmissie')
                     ->required(),
                 Textarea::make('description')
-                    ->label('Omschrijving')
                     ->required(),
                 Fieldset::make('Status')
                     ->schema([
-                        Checkbox::make('sold')
-                            ->label('Verkocht'),
-                        Checkbox::make('reserved')
-                            ->label('Gereserveerd'),
-                        Checkbox::make('hidden')
-                            ->label('Niet tonen'),
+                        Checkbox::make('sold'),
+                        Checkbox::make('reserved'),
+                        Checkbox::make('hidden'),
                     ])
                     ->visible(fn (string $context) => $context === 'edit'),
                 FileUpload::make('images')
-                    ->label('Afbeeldingen')
                     ->multiple()
                     ->image()
                     ->directory('occasions')
@@ -79,26 +69,19 @@ class OccasionResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('liscenceplate')
-                    ->label('Kenteken')
+                TextColumn::make('licenceplate')
                     ->searchable(),
                 TextColumn::make('advertisingtitle')
-                    ->label('Advertentie Titel')
                     ->searchable(),
                 TextColumn::make('brand')
-                    ->label('Merk')
                     ->searchable(),
                 TextColumn::make('model')
-                    ->label('Model')
                     ->searchable(),
-                CheckboxColumn::make('sold')
-                    ->label('Verkocht'),
-                CheckboxColumn::make('hidden')
-                    ->label('Niet tonen in winkel'),
+                CheckboxColumn::make('sold'),
+                CheckboxColumn::make('hidden'),
             ])
             ->filters([
                 SelectFilter::make('sold')
-                    ->label('Verkocht')
                     ->options([
                         '1' => 'alleen verkocht',
                         '0' => 'Alleen beschikbaar',

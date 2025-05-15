@@ -3,14 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Http;
 
 class Occasion extends Model
 {
 
     // translation included
     protected $fillable = [
-        'liscenceplate', //kenteken
+        'licenceplate', //kenteken
         'advertisingtitle', //advertentietitel
         'askprice', //vraagprijs
         'images', //afbeeldingen
