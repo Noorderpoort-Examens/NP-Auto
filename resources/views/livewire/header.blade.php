@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }" class="text-white font-opensans container-shadow">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
+        <div class="flex justify-between items-center">
             <div class="flex items-center">
                 <!-- Logo -->
                 <div class="shrink-0">

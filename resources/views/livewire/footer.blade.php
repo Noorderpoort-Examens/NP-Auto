@@ -1,7 +1,8 @@
 <footer class="bg-np-white rounded-lg shadow-sm container-shadow">
-    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-        <span class="text-sm text-np-dark sm:text-center">© 2025 <a href="https://flowbite.com/"
-                class="hover:underline">NP-Auto</a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full  p-4 md:flex md:items-center md:justify-between">
+        <span class="text-sm text-np-dark sm:text-center">
+            © 2025
+            <a href="{{ route('home') }}" class="hover:underline">NP-Auto</a>
         </span>
         <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
             <x-nav-link :href="route('home')" wire:navigate>
