@@ -36,6 +36,13 @@
     "images": "Afbeeldingen",
     "Images": "Afbeeldingen",
 
+    "firstname": "Voornaam",
+    "Firstname": "Voornaam",
+    "lastname": "Achternaam",
+    "Lastname": "Achternaam",
+    "phonenumber": "Telefoon nummer",
+    "Phonenumber": "Telefoon nummer",
+
     "Insufficient permissions": "Je hebt hier geen permissies voor"
 
 }
