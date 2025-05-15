@@ -30,7 +30,6 @@ class OccasionResource extends Resource
             ->schema([
                 TextInput::make('licenceplate')
                     ->required()
-                    ->dehydrateStateUsing(fn ($state) => strtoupper(str_replace('-', '', $state))) //enforce format
                     ->rule(new ValidateLicencePlate)
                     ->helperText('Format XX123X')
                     ->readOnly(fn (string $context) => $context === 'edit'),

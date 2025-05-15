@@ -17,6 +17,7 @@ class ValidateLicencePlate implements ValidationRule
     {
 
         $licencePlate = strtoupper(str_replace('-', '', $value));
+        $licencePlate = strtoupper(str_replace(' ', '', $value));
 
         $apiDataGeneral = Http::get("https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken={$licencePlate}")->json();
         $apiDataFuel = Http::get("https://opendata.rdw.nl/resource/8ys7-d773.json?kenteken={$licencePlate}")->json();

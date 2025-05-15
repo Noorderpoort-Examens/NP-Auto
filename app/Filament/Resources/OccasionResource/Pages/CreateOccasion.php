@@ -14,8 +14,9 @@ class CreateOccasion extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        //licenceplates in all uppercase, set to the same standard for saving
+        //licenceplates in all uppercase, set to the same standard for saving, no space or -
         $data['licenceplate'] = strtoupper(str_replace('-', '', $data['licenceplate']));
+        $data['licenceplate'] = strtoupper(str_replace(' ', '', $data['licenceplate']));
 
         //api calls first up
         $apiDataGeneral = Http::get("https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken={$data['licenceplate']}")->json();
