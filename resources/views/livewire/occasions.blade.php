@@ -50,4 +50,11 @@
             </div>
         @endforeach
     </div>
+
+
+    @if ($is_archive)
+        <div class="mt-6">
+            {{ $occasions->links('vendor.pagination.tailwind') }}
+        </div>
+    @endif
 </div>
