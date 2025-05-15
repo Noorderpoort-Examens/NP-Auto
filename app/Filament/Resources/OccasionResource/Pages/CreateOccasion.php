@@ -38,13 +38,13 @@ class CreateOccasion extends CreateRecord
             $data['apk'] = Carbon::createFromFormat('Ymd', $dataGeneral['vervaldatum_apk'] ?? '')->toDateString(); //carbon instance date item
             $data['cylindercapacity'] = (int) ($dataGeneral['cilinderinhoud'] ?? 0);
             $data['weight'] = (int) ($dataGeneral['massa_rijklaar'] ?? 0);
-            $data['fuelefficiency'] = $dataGeneral['zuinigheidsclassificatie'] ?? null;
+            $data['fuelefficiency'] = $dataGeneral['zuinigheidsclassificatie'] ?? 'Onbekend';
 
             //second api data allocation (fuel)
             $dataFuel = $apiDataFuel[0];
 
             $data['fuel'] = $dataFuel['brandstof_omschrijving'] ?? null;
-            $data['fuelconsumption'] = (int) $dataFuel['brandstofverbruik_gecombineerd'] ?? null;
+            $data['fuelconsumption'] = (int) ($dataFuel['brandstofverbruik_gecombineerd'] ?? 0);
         }
 
         return $data;
