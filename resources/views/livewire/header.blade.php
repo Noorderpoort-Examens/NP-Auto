@@ -15,7 +15,7 @@
                 <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                     {{ __('Home') }}
                 </x-nav-link>
-                <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
+                <x-nav-link :href="route('occasions.archive')" :active="request()->routeIs('occasions.archive')" wire:navigate>
                     {{ __('Occasions') }}
                 </x-nav-link>
                 <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
