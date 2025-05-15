@@ -30,6 +30,7 @@ class OccasionResource extends Resource
             ->schema([
                 TextInput::make('licenceplate')
                     ->required()
+                    ->unique(ignoreRecord: true) //the framework might not realise when saving that the field is read only in edit
                     ->rule(new ValidateLicencePlate)
                     ->helperText('Format XX123X')
                     ->readOnly(fn (string $context) => $context === 'edit'),

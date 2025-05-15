@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('advertisingtitle');
             $table->integer('askprice');
-            $table->string('licenceplate');
+            $table->string('licenceplate')->unique();
             $table->string('description');
             $table->integer('mileage');
             $table->json('images');
