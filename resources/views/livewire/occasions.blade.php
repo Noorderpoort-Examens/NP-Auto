@@ -13,6 +13,22 @@
 
                 $brand = ucfirst(strtolower($occasion->brand));
                 $model = ucfirst(strtolower($occasion->model));
+
+                $label = null;
+                $labelClass = null;
+
+                switch (true) {
+                    case $occasion->sold:
+                        $label = 'Verkocht';
+                        $labelClass = 'bg-red-600';
+                        break;
+                    case $occasion->reserved:
+                        $label = 'Gereserveerd';
+                        $labelClass = 'bg-np-yellow';
+                        break;
+                    default:
+                        break;
+                }
             @endphp
 
             <div class="relative rounded-lg p-6 shadow-sm bg-np-dark/90 h-max">
@@ -25,10 +41,13 @@
                             <img src="{{ asset('img/fallback-image.png') }}" alt="{{ $brand }} {{ $model }}"
                                 class="block w-full rounded-lg" />
                         @endif
-                        <div
-                            class="absolute top-0 left-0 bg-red-600 text-white text-sm font-bold py-1 px-3 z-10 rounded">
-                            Verkocht
-                        </div>
+
+                        @if ($label)
+                            <div
+                                class="absolute top-0 left-0 {{ $labelClass }} text-white text-sm font-bold py-1 px-3 z-10 rounded">
+                                {{ $label }}
+                            </div>
+                        @endif
                     </div>
                 </a>
 
@@ -57,4 +76,5 @@
             {{ $occasions->links('vendor.pagination.tailwind') }}
         </div>
     @endif
+
 </div>
