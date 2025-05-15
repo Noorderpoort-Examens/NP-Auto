@@ -1,0 +1,41 @@
+{
+    "User Management": "Gebruikers beheer",
+    "Users": "Gebruikers",
+    "User": "Gebruiker",
+    "Roles": "Rollen",
+    "Role": "Rol",
+    "Permissions": "Permissies",
+    "Permission": "Permissie",
+    "Mechanics": "Monteurs",
+    "Mechanic": "Monteur",
+
+    "Name": "Naam",
+    "Password": "Wachtwoord",
+    "Created at": "Aangemaakt op",
+
+    "licenceplate": "Kenteken",
+    "Licenceplate": "Kenteken",
+    "advertisingtitle": "Advertentie titel",
+    "Advertisingtitle": "Advertentie titel",
+    "brand": "Merk",
+    "Brand": "Merk",
+    "sold": "Verkocht",
+    "Sold": "Verkocht",
+    "hidden": "Niet tonen in winkel",
+    "Hidden": "Niet tonen in winkel",
+    "transmission": "Transmissie",
+    "Transmission": "Transmissie",
+    "description": "Omschrijving",
+    "Description": "Omschrijving",
+    "mileage": "Kilometerstand",
+    "Mileage": "Kilometerstand",
+    "askprice": "Vraag prijs",
+    "Askprice": "Vraag prijs",
+    "reserved": "Gereserveerd",
+    "Reserved": "Gereserveerd",
+    "images": "Afbeeldingen",
+    "Images": "Afbeeldingen",
+
+    "Insufficient permissions": "Je hebt hier geen permissies voor"
+
+}
