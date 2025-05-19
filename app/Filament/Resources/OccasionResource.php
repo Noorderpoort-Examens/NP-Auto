@@ -38,14 +38,14 @@ class OccasionResource extends Resource
                 TextInput::make('advertisingtitle')
                     ->required(),
                 TextInput::make('askprice')
-                    ->integer()
+                    ->numeric()
                     ->minValue(0)
                     ->maxValue(2000000)
                     ->required(),
                 TextInput::make('mileage')
                     ->integer()
                     ->minValue(0)
-                    ->maxValue(2000000)
+                    ->maxValue(20000000)
                     ->required(),
                 TextInput::make('transmission')
                     ->required(),
