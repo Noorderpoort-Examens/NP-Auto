@@ -73,7 +73,7 @@
 
     @if ($is_archive)
         <div class="mt-6">
-            {{ $occasions->links('vendor.pagination.tailwind') }}
+            {{ $occasions->links() }}
         </div>
     @endif
 

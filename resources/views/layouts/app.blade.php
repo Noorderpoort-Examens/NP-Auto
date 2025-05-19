@@ -27,6 +27,7 @@
 
     <livewire:footer />
 
+    @livewireScripts
     @yield('scripts')
 </body>
 
