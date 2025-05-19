@@ -3,10 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ReservationResource\Pages;
-use App\Filament\Resources\ReservationResource\RelationManagers;
-use App\Models\Occasion;
 use App\Models\Reservation;
-use Filament\Forms;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -15,7 +12,6 @@ use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ReservationResource extends Resource
 {
@@ -49,8 +45,11 @@ class ReservationResource extends Resource
                     ->required(),
                 Select::make('occasion_id')
                     ->label('Occasion')
-                    ->relationship('occasion', 'name')
-                    ->options(Occasion::all()->pluck('licenceplate', 'id'))
+                    ->relationship(
+                        name: 'occasion',
+                        titleAttribute: 'licenceplate',
+                        modifyQueryUsing: fn (Builder $query) => $query->where('sold', false) //exclude all sold cars, there is extra validation for if this is circumvented.
+                    )
                     ->preload()
                     ->unique(ignoreRecord: true)
                     ->required(),
