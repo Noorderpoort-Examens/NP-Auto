@@ -30,21 +30,22 @@ class OccasionResource extends Resource
             ->schema([
                 TextInput::make('licenceplate')
                     ->required()
-                    ->unique(ignoreRecord: true) //the framework might not realise when saving that the field is read only in edit
+                    ->unique(ignoreRecord: true)
                     ->rule(new ValidateLicencePlate)
                     ->helperText('Format XX123X')
-                    ->readOnly(fn (string $context) => $context === 'edit'),
+                    ->readOnly(fn (string $context) => $context === 'edit')
+                    ->disabled(fn (string $context) => $context === 'edit'),
                 TextInput::make('advertisingtitle')
                     ->required(),
                 TextInput::make('askprice')
-                    ->integer()
+                    ->numeric()
                     ->minValue(0)
                     ->maxValue(2000000)
                     ->required(),
                 TextInput::make('mileage')
                     ->integer()
                     ->minValue(0)
-                    ->maxValue(2000000)
+                    ->maxValue(20000000)
                     ->required(),
                 TextInput::make('transmission')
                     ->required(),
@@ -53,8 +54,9 @@ class OccasionResource extends Resource
                 Fieldset::make('Status')
                     ->schema([
                         Checkbox::make('sold'),
-                        Checkbox::make('reserved'),
                         Checkbox::make('hidden'),
+                        Checkbox::make('reserved')
+                            ->disabled(),
                     ])
                     ->visible(fn (string $context) => $context === 'edit'),
                 FileUpload::make('images')
