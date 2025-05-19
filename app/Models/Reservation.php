@@ -15,7 +15,7 @@ class Reservation extends Model
         'occasion_id',
     ];
 
-    // wwe cant just save it as plain text
+    // we cant just save it as plain text
     protected $casts = [
         'phonenumber' => 'encrypted',
         'email' => 'encrypted',
