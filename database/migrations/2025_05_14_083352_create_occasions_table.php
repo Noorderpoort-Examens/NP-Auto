@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('occasions', function (Blueprint $table) {
             $table->id();
             $table->string('advertisingtitle');
-            $table->integer('askprice');
+            $table->float('askprice');
             $table->string('licenceplate')->unique();
             $table->string('description');
             $table->integer('mileage');
