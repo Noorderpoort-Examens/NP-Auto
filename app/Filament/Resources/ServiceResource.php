@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ServiceResource\Pages;
 use App\Models\Service;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -19,7 +20,16 @@ class ServiceResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('title')
+                    ->unique(ignoreRecord: true)
+                    ->required(),
+                TextInput::make('description')
+                    ->required(),
+                TextInput::make('price')
+                    ->numeric()
+                    ->required(),
+                TextInput::make('time')
+                    ->required(),
             ]);
     }
 
