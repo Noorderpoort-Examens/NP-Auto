@@ -39,7 +39,7 @@
                                 class="block w-full rounded-lg aspect-video" />
                         @else
                             <img src="{{ asset('img/fallback-image.png') }}" alt="{{ $brand }} {{ $model }}"
-                                class="block w-full rounded-lg bg-np-color-shade aspect-video" />
+                                class="block w-full rounded-lg bg-np-color-shade aspect-video object-contain" />
                         @endif
 
                         @if ($label)
