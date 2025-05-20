@@ -12,19 +12,19 @@
                 <div>
                     <h2 class="font-roboto text-lg md:text-xl lg:text-2xl font-bold mb-1">{{ $occasion->advertisingtitle }}</h2>
                     <h3 class="font-opensans text-sm md:text-base lg:text-lg mb-1">Prijs: €{{ number_format($occasion->askprice, 2, ',', '.') }}</h3>
-                    <p class="text-xs md:text-sm lg:text-base text-gray-700 mb-1">{{ $occasion->description }}</p>
+                    <p class="font-opensans text-xs md:text-sm lg:text-base text-gray-700 mb-1">{{ $occasion->description }}</p>
                 </div>
 
                 @if ($occasion->sold)
-                    <div class="mt-5 text-center w-full rounded-lg bg-red-600 px-5 py-2.5 text-sm md:text-base lg:text-lg font-medium text-white">
+                    <div class="font-roboto mt-5 text-center w-full rounded-lg bg-red-600 px-5 py-2.5 text-sm md:text-base lg:text-lg font-medium text-white">
                         Verkocht
                     </div>
                 @elseif ($occasion->reserved)
-                    <div class="mt-5 text-center w-full rounded-lg bg-np-yellow px-5 py-2.5 text-sm md:text-base lg:text-lg font-medium text-dark">
+                    <div class="font-roboto mt-5 text-center w-full rounded-lg bg-np-yellow px-5 py-2.5 text-sm md:text-base lg:text-lg font-medium text-dark">
                         Gereserveerd
                     </div>
                 @else
-                    <button type="button" class="mt-5 w-full rounded-lg bg-np-dark px-5 py-2.5 text-sm md:text-base lg:text-lg font-medium text-white hover:bg-np-yellow/90 focus:outline-none focus:ring-4 focus:ring-np-white transition">
+                    <button type="button" class="font-roboto mt-5 w-full rounded-lg bg-np-dark px-5 py-2.5 text-sm md:text-base lg:text-lg font-medium text-white hover:bg-np-yellow/90 focus:outline-none focus:ring-4 focus:ring-np-white transition">
                         Reserveren
                     </button>
                 @endif
@@ -42,22 +42,22 @@
             </div>
         @endif
         <div class="grid pb-3 lg:pb-5 grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-xs md:text-sm lg:text-base mx-4">
-            <p>Kenteken: {{ $occasion->licenceplate }}</p>
-            <p>Merk: {{ucfirst(strtolower($occasion->brand)) }}</p>
-            <p>Model: {{ ucfirst(strtolower($occasion->model)) }}</p>
-            <p>Kleur: {{ ucfirst(strtolower($occasion->color)) }}</p>
-            <p>Bouwjaar: {{ $occasion->buildyear }}</p>
-            <p>Carrosserie: {{ $occasion->carbody }}</p>
-            <p>Brandstof: {{ $occasion->fuel }}</p>
-            <p>Brandstofverbruik: {{ $occasion->fuelconsumption }}</p>
-            <p>Zuinigheidsklasse: {{ $occasion->fuelefficiency }}</p>
-            <p>Kilometerstand: {{ number_format($occasion->mileage, 0, ',', '.') }} Km</p>
-            <p>Transmissie: {{ $occasion->transmission }}</p>
-            <p>Deuren: {{ $occasion->doors }}</p>
-            <p>Zitplaatsen: {{ $occasion->seats }}</p>
-            <p>APK tot: {{ $occasion->apk }}</p>
-            <p>Cilinderinhoud: {{ $occasion->cylindercapacity }}</p>
-            <p>Gewicht: {{ $occasion->weight }} Kg</p>
+            <p class="font-opensans">Kenteken: {{ $occasion->licenceplate }}</p>
+            <p class="font-opensans">Merk: {{ucfirst(strtolower($occasion->brand)) }}</p>
+            <p class="font-opensans">Model: {{ ucfirst(strtolower($occasion->model)) }}</p>
+            <p class="font-opensans">Kleur: {{ ucfirst(strtolower($occasion->color)) }}</p>
+            <p class="font-opensans">Bouwjaar: {{ $occasion->buildyear }}</p>
+            <p class="font-opensans">Carrosserie: {{ $occasion->carbody }}</p>
+            <p class="font-opensans">Brandstof: {{ $occasion->fuel }}</p>
+            <p class="font-opensans">Brandstofverbruik: {{ $occasion->fuelconsumption }}</p>
+            <p class="font-opensans">Zuinigheidsklasse: {{ $occasion->fuelefficiency }}</p>
+            <p class="font-opensans">Kilometerstand: {{ number_format($occasion->mileage, 0, ',', '.') }} Km</p>
+            <p class="font-opensans">Transmissie: {{ $occasion->transmission }}</p>
+            <p class="font-opensans">Deuren: {{ $occasion->doors }}</p>
+            <p class="font-opensans">Zitplaatsen: {{ $occasion->seats }}</p>
+            <p class="font-opensans">APK tot: {{ $occasion->apk }}</p>
+            <p class="font-opensans">Cilinderinhoud: {{ $occasion->cylindercapacity }}</p>
+            <p class="font-opensans">Gewicht: {{ $occasion->weight }} Kg</p>
         </div>
     </div>
 </div>
