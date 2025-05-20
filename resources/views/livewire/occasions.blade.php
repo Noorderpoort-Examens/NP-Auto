@@ -56,7 +56,7 @@
                     <div class="mt-4 flex items-center justify-between gap-4">
                         <button type="button"
                             class="items-center w-full rounded-lg bg-np-yellow px-5 py-2.5 text-sm md:text-base lg:text-lg font-medium text-white hover:bg-np-yellow/90 focus:outline-none focus:ring-4 focus:ring-np-white transition duration-150 ease-in-out">
-                            Bekijk occasions
+                            Bekijk occasion
                         </button>
                     </div>
                 </div>
