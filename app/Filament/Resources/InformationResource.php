@@ -3,15 +3,14 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\InformationResource\Pages;
-use App\Filament\Resources\InformationResource\RelationManagers;
 use App\Models\Information;
-use Filament\Forms;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class InformationResource extends Resource
 {
@@ -19,11 +18,27 @@ class InformationResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getPluralLabel(): ?string
+    {
+        return __('Information');
+    }
+
+    public static function getLabel(): ?string
+    {
+        return __('Information');
+    }
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                TextInput::make('type')
+                    ->required(),
+
+                RichEditor::make('content')
+                    ->label('Post Content')
+                    ->required()
+                    ->helperText('Let op de opbouw hier komt exact overeen met hoe het op de pagina getoond word.'),
             ]);
     }
 
@@ -31,7 +46,9 @@ class InformationResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('type'),
+                TextColumn::make('content')
+                    ->html(),
             ])
             ->filters([
                 //
