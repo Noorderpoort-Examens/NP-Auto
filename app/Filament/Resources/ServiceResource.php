@@ -9,6 +9,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class ServiceResource extends Resource
@@ -42,7 +43,11 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('title')
+                    ->searchable(),
+                TextColumn::make('description'),
+                TextColumn::make('price'),
+                TextColumn::make('time'),
             ])
             ->filters([
                 //
