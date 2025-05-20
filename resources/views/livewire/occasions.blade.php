@@ -36,10 +36,10 @@
                     <div class="relative rounded-lg transform transition duration-150 ease-in-out group-hover:scale-110">
                         @if ($firstImage)
                             <img src="{{ asset('storage/' . $firstImage) }}" alt="{{ $brand }} {{ $model }}"
-                                class="block w-full rounded-lg" />
+                                class="block w-full rounded-lg aspect-video" />
                         @else
                             <img src="{{ asset('img/fallback-image.png') }}" alt="{{ $brand }} {{ $model }}"
-                                class="block w-full rounded-lg bg-np-color-shade" />
+                                class="block w-full rounded-lg bg-np-color-shade aspect-video" />
                         @endif
 
                         @if ($label)
