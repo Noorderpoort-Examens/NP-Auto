@@ -19,6 +19,16 @@ class ServiceResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getPluralLabel(): ?string
+    {
+        return __('Services');
+    }
+
+    public static function getLabel(): ?string
+    {
+        return __('Services');
+    }
+
     public static function form(Form $form): Form
     {
         return $form

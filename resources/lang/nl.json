@@ -48,6 +48,11 @@
     "Reservation": "Reservatie",
     "reservation": "Reservatie",
 
+    "Services": "Onderhoud",
+    "Title": "Titel",
+    "Price": "Prijs",
+    "Time": "Tijd",
+
     "Insufficient permissions": "Je hebt hier geen permissies voor"
 
 }
