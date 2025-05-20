@@ -38,7 +38,11 @@ class OpeningTimeResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([])
+            ->columns([
+                TextColumn::make('day'),
+                TextColumn::make('start'),
+                TextColumn::make('end')
+            ])
             ->filters([
                 //
             ])
