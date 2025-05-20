@@ -2,16 +2,16 @@
     @php
         $images = is_string($occasion->images) ? json_decode($occasion->images, true) : $occasion->images;
     @endphp
-    <div x-data="{ selectedImage: '{{ asset('storage/' . ($images[0] ?? 'img/fallback-image.png')) }}' }" class="max-w-4xl mx-auto bg-white shadow-lg overflow-hidden">
-        <div class="flex flex-col md:flex-row overflow-hidden mx-3 mb-2 md:min-h-80">
+    <div x-data="{ selectedImage: '{{ asset('storage/' . ($images[0] ?? 'img/fallback-image.png')) }}' }" class="max-w-4xl mx-auto bg-white shadow-lg my-3 lg:my-5 overflow-hidden rounded-lg">
+        <div class="flex flex-col md:flex-row overflow-hidden mx-3 mb-2 md:min-h-80 my-2">
             <div class="w-full md:w-2/3 md:max-h-80">
-                <img :src="selectedImage" alt="{{ $occasion->brand }} {{ $occasion->model }}" class="object-cover w-full h-full">
+                <img :src="selectedImage" alt="{{ $occasion->brand }} {{ $occasion->model }}" class="object-cover w-full h-full rounded">
             </div>
 
             <div class="w-full md:w-2/3 px-6 py-3 flex flex-col justify-between">
                 <div>
-                    <h2 class="text-lg md:text-xl lg:text-2xl font-bold mb-1">{{ $occasion->advertisingtitle }}</h2>
-                    <h3 class="text-sm md:text-base lg:text-lg mb-1">Prijs: €{{ $occasion->askprice }}</h3>
+                    <h2 class="font-roboto text-lg md:text-xl lg:text-2xl font-bold mb-1">{{ $occasion->advertisingtitle }}</h2>
+                    <h3 class="font-opensans text-sm md:text-base lg:text-lg mb-1">Prijs: €{{ number_format($occasion->askprice, 2, ',', '.') }}</h3>
                     <p class="text-xs md:text-sm lg:text-base text-gray-700 mb-1">{{ $occasion->description }}</p>
                 </div>
 
@@ -41,17 +41,17 @@
                 @endforeach
             </div>
         @endif
-        <div class="grid pb-6 grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-xs md:text-sm lg:text-base mx-4">
+        <div class="grid pb-3 lg:pb-5 grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-xs md:text-sm lg:text-base mx-4">
             <p>Kenteken: {{ $occasion->licenceplate }}</p>
             <p>Merk: {{ucfirst(strtolower($occasion->brand)) }}</p>
             <p>Model: {{ ucfirst(strtolower($occasion->model)) }}</p>
-            <p>Kleur: {{ $occasion->color }}</p>
+            <p>Kleur: {{ ucfirst(strtolower($occasion->color)) }}</p>
             <p>Bouwjaar: {{ $occasion->buildyear }}</p>
             <p>Carrosserie: {{ $occasion->carbody }}</p>
             <p>Brandstof: {{ $occasion->fuel }}</p>
             <p>Brandstofverbruik: {{ $occasion->fuelconsumption }}</p>
             <p>Zuinigheidsklasse: {{ $occasion->fuelefficiency }}</p>
-            <p>Kilometerstand: {{ $occasion->mileage }} Km</p>
+            <p>Kilometerstand: {{ number_format($occasion->mileage, 0, ',', '.') }} Km</p>
             <p>Transmissie: {{ $occasion->transmission }}</p>
             <p>Deuren: {{ $occasion->doors }}</p>
             <p>Zitplaatsen: {{ $occasion->seats }}</p>

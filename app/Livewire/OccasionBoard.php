@@ -11,12 +11,11 @@ class OccasionBoard extends Component
 
     public function mount($occasion)
     {
-        $this->occasion = Occasion::where('id', $occasion)->firstOrFail();
+        $this->occasion = Occasion::where('licenceplate', $occasion)->firstOrFail();
     }
 
     public function render()
     {
-
         return view('livewire.occasion-board');
     }
 }
