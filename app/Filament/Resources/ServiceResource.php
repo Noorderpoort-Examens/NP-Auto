@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\ServiceResource\Pages;
 use App\Models\Service;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -28,8 +29,12 @@ class ServiceResource extends Resource
                 TextInput::make('price')
                     ->numeric()
                     ->required(),
-                TextInput::make('time')
-                    ->required(),
+                Select::make('time')
+                    ->required()
+                    ->options([
+                        'half_day' => 'Halve dag',
+                        'full_day' => 'Hele dag'
+                    ])
             ]);
     }
 
