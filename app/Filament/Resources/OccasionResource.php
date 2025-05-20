@@ -41,6 +41,7 @@ class OccasionResource extends Resource
                     ->numeric()
                     ->minValue(0)
                     ->maxValue(2000000)
+                    ->helperText('Alleen een komma bij decimalen, getal wordt door systeem met punten verdeeld.')
                     ->required(),
                 TextInput::make('mileage')
                     ->integer()
