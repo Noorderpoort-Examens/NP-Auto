@@ -55,6 +55,8 @@
 
     "Information": "Informatie",
 
-    "Insufficient permissions": "Je hebt hier geen permissies voor"
+    "Insufficient permissions": "Je hebt hier geen permissies voor",
 
+    "pagination.next": "Volgende",
+    "pagination.previous": "Vorige"
 }
