@@ -52,9 +52,11 @@
     "Time": "tijd",
     "Day": "Dag",
     "End": "Einde",
-
+    "Services": "Onderhoud",
+    "Title": "Titel",
+    "Price": "Prijs",
+    "Time": "Tijd",
     "Information": "Informatie",
-
     "Insufficient permissions": "Je hebt hier geen permissies voor",
 
     "pagination.next": "Volgende",
