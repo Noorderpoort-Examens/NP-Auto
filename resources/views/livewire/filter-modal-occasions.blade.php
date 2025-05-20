@@ -48,19 +48,6 @@
                                 wire:click="$dispatch('filterUpdated', { status: 'reserved' })" class="h-4 w-4" />
                             <label for="used" class="ml-2 text-sm text-white">Gereserveerd</label>
                         </li>
-
-                        {{-- <li class="flex items-center">
-                            <input id="all" type="radio" name="status" checked class="h-4 w-4" />
-                            <label for="all" class="ml-2 text-sm text-white">Alle</label>
-                        </li>
-                        <li class="flex items-center">
-                            <input id="new" type="radio" name="status" class="h-4 w-4" />
-                            <label for="new" class="ml-2 text-sm text-white">Niet verkocht</label>
-                        </li>
-                        <li class="flex items-center">
-                            <input id="used" type="radio" name="status" class="h-4 w-4" />
-                            <label for="used" class="ml-2 text-sm text-white">Gereserveerd</label>
-                        </li> --}}
                     </ul>
                 </div>
 
