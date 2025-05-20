@@ -1,10 +1,4 @@
 <div>
-    @php
-        $count = count($occasions);
-        $smCols = min($count, 2);
-        $lgCols = min($count, 4);
-    @endphp
-
     <div class="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
         @foreach ($occasions as $occasion)
             @php
