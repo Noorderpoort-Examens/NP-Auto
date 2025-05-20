@@ -7,3 +7,9 @@ Route::view('/', 'welcome')
 
 Route::view('/occasions', 'occasions-archive')
     ->name('occasions.archive');
+
+Route::view('/occasions/{occasion}', 'occasion-single')
+    ->name('occasions.show');
+
+Route::view('/contact', 'contact')
+    ->name('contact');
