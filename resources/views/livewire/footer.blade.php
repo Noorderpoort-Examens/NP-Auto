@@ -8,13 +8,13 @@
             <x-nav-link :href="route('home')" wire:navigate>
                 {{ __('Home') }}
             </x-nav-link>
-            <x-nav-link :href="route('home')" wire:navigate>
+            <x-nav-link :href="route('occasions.archive')" wire:navigate>
                 {{ __('Occasions') }}
             </x-nav-link>
             <x-nav-link :href="route('home')" wire:navigate>
                 {{ __('Service & Onderhoud') }}
             </x-nav-link>
-            <x-nav-link :href="route('home')" wire:navigate>
+            <x-nav-link :href="route('contact')" wire:navigate>
                 {{ __('Contact') }}
             </x-nav-link>
         </ul>

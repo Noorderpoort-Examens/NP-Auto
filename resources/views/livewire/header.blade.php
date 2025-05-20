@@ -15,13 +15,13 @@
                 <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                     {{ __('Home') }}
                 </x-nav-link>
-                <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
+                <x-nav-link :href="route('occasions.archive')" :active="request()->routeIs('occasions.archive')" wire:navigate>
                     {{ __('Occasions') }}
                 </x-nav-link>
                 <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                     {{ __('Service & Onderhoud') }}
                 </x-nav-link>
-                <x-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
+                <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
                     {{ __('Contact') }}
                 </x-nav-link>
             </div>
@@ -48,7 +48,7 @@
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                 {{ __('Home') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
+            <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
                 {{ __('Contact') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>

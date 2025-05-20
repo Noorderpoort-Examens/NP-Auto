@@ -7,4 +7,6 @@ return [
     'integer' => 'Ongeldig nummer.',
     'mimetypes' => 'Er is iets misgegaan, probeer de images opnieuw te sturen',
     'boolean' => 'Er is iets misgegaan, geen correcte bool value gevonden.',
+    'before' => 'Er is iets misgegaan, de tijd hoort eerder te zijn dan de opgegeven eindtijd.',
+    'after' => 'Er is iets misgegaan, de tijd hoort later te zijn dan de opgegeven starttijd.',
 ];
