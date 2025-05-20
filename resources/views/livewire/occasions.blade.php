@@ -39,7 +39,7 @@
                                 class="block w-full rounded-lg" />
                         @else
                             <img src="{{ asset('img/fallback-image.png') }}" alt="{{ $brand }} {{ $model }}"
-                                class="block w-full rounded-lg" />
+                                class="block w-full rounded-lg bg-np-color-shade" />
                         @endif
 
                         @if ($label)
