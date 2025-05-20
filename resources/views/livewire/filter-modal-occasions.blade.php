@@ -66,7 +66,7 @@
 
                 <div class="flex justify-end gap-2">
                     <button type="button" wire:click="closeModal"
-                        class="rounded-lg border border-gray-300 px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">
+                        class="rounded-lg w-full border border-np-white px-4 py-2 text-sm text-np-white hover:bg-np-dark">
                         Reset
                     </button>
                 </div>
