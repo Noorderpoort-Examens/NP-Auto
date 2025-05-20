@@ -2,21 +2,19 @@
 
 namespace App\Livewire;
 
+use App\Models\Information;
 use Livewire\Component;
 
 class ContactDetails extends Component
 {
-    public array $contact = [
-        [
-            'phonenumber' => '085-1234567',
-            'email' => 'info@np-auto.nl',
-        ]
-    ];
-
     public function render()
     {
+        $phonenumber = Information::where('type', 'phonenumber')->value('content');
+        $email = Information::where('type', 'email')->value('content');
+
         return view('livewire.contact-details', [
-            'contact' => $this->contact,
+            'phonenumber' => $phonenumber,
+            'email' => $email,
         ]);
     }
 }
