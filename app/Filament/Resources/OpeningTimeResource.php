@@ -21,7 +21,18 @@ class OpeningTimeResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([]);
+            ->schema([
+                TextInput::make('day')
+                    ->required(),
+                TimePicker::make('start')
+                    ->required()
+                    ->label('Opent om')
+                    ->before('end'),
+                TimePicker::make('end')
+                    ->required()
+                    ->label('Sluit om')
+                    ->after('start'),
+            ]);
     }
 
     public static function table(Table $table): Table
