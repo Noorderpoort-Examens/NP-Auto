@@ -18,6 +18,16 @@ class OpeningTimeResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    public static function getPluralLabel(): ?string
+    {
+        return __('Opening Times');
+    }
+
+    public static function getLabel(): ?string
+    {
+        return __('Time');
+    }
+
     public static function form(Form $form): Form
     {
         return $form

@@ -47,6 +47,11 @@
     "reservations": "Reservaties",
     "Reservation": "Reservatie",
     "reservation": "Reservatie",
+    
+    "Opening Times": " Openingstijd",
+    "Time": "tijd",
+    "Day": "Dag",
+    "End": "Einde",
 
     "Insufficient permissions": "Je hebt hier geen permissies voor"
 
