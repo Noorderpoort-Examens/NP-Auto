@@ -75,6 +75,10 @@ class OpeningTimeResource extends Resource
 
     public static function getPages(): array
     {
+        if (auth()->check() && !auth()->user()->can('manage information')) {
+            abort(403, __('Insufficient permissions'));
+        }
+
         return [
             'index' => Pages\ListOpeningTimes::route('/'),
             'create' => Pages\CreateOpeningTime::route('/create'),
