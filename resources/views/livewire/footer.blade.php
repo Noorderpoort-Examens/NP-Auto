@@ -2,11 +2,11 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full p-4 ">
         <div class="grid sm:grid-cols-2 gap-4 sm:gap-8 px-4 py-6 lg:py-8 md:grid-cols-2">
             <div>
-                <h2 class="mb-6 text-sm font-semibold text-np-dark uppercase">Openingstijden</h2>
+                <h2 class="mb-6 text-lg md:text-xl lg:text-2xl font-semibold text-np-dark">Openingstijden</h2>
                 <livewire:opening-times />
             </div>
             <div>
-                <h2 class="mb-6 text-sm font-semibold text-np-dark uppercase">Navigatie links</h2>
+                <h2 class="mb-6 text-lg md:text-xl lg:text-2xl font-semibold text-np-dark">Navigatie links</h2>
                 <ul
                     class="grid sm:grid-cols-2 items-center gap-4 mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
                     <a class="font-normal hover:text-np-yellow transition duration-150 ease-in-out text-xs md:text-sm lg:text-base font-opensans text-nowrap text-np-dark"
@@ -28,7 +28,7 @@
                 </ul>
             </div>
             <div>
-                <h2 class="mb-6 text-sm font-semibold text-np-dark uppercase">Contact details</h2>
+                <h2 class="mb-6 text-lg md:text-xl lg:text-2xl font-semibold text-np-dark">Contact details</h2>
                 <livewire:contact-details :is_contact_page="false" />
             </div>
             <div>
