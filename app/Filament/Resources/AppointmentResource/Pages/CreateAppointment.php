@@ -41,7 +41,7 @@ class CreateAppointment extends CreateRecord
 
         if ($bookedHours + $newHours > 48) {
             Notification::make()
-                ->title('Afspraak verplaatsen niet gelukt')
+                ->title('Afspraak maken niet gelukt')
                 ->body('Het is niet mogelijk om de afspraak in te plannen, Deze datum heeft niet genoeg tijd voor deze afspraak.')
                 ->danger()
                 ->send();

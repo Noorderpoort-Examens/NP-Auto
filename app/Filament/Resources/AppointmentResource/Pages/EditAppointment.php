@@ -29,7 +29,7 @@ class EditAppointment extends EditRecord
 
         if ($bookedHours + $newHours > 48) {
             Notification::make()
-                ->title('Afspraak maken niet gelukt')
+                ->title('Afspraak verplaatsen niet gelukt')
                 ->body('Het is niet mogelijk om de afspraak in te plannen, Deze datum heeft niet genoeg tijd voor deze afspraak.')
                 ->danger()
                 ->send();
