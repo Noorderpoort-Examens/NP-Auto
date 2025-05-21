@@ -48,7 +48,7 @@ class ReservationResource extends Resource
                     ->relationship(
                         name: 'occasion',
                         titleAttribute: 'licenceplate',
-                        modifyQueryUsing: fn (Builder $query) => $query->where('sold', false) //exclude all sold cars, there is extra validation for if this is circumvented.
+                        modifyQueryUsing: fn(Builder $query) => $query->where('sold', false) //exclude all sold cars, there is extra validation for if this is circumvented.
                     )
                     ->preload()
                     ->unique(ignoreRecord: true)
@@ -90,6 +90,10 @@ class ReservationResource extends Resource
 
     public static function getPages(): array
     {
+        if (auth()->check() && !auth()->user()->can('manage reservations')) {
+            abort(403, __('Insufficient permissions'));
+        }
+
         return [
             'index' => Pages\ListReservations::route('/'),
             'create' => Pages\CreateReservation::route('/create'),
