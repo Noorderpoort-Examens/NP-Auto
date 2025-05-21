@@ -4,6 +4,17 @@
 
 @section('content')
 
+<section class="relative container-shadow">
+    <img class="w-full object-cover opacity-0 md:opacity-50 max-h-[604px]" src="{{ asset('img/autobedrijf.jpg') }}"
+        alt="company-logo">
+
+    <div class="absolute inset-0 flex flex-col items-center justify-center w-full h-full">
+        <h1 class="text-np-dark text-3xl md:text-4xl lg:text-5xl font-bold font-roboto">Welkom bij NP Auto</h1>
+
+        <livewire:general-info />
+    </div>
+</section>
+
 <section class="my-9">
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="text-3xl md:text-4xl lg:text-5xl text-center mb-9 font-roboto font-bold">
