@@ -121,6 +121,10 @@ class AppointmentResource extends Resource
 
     public static function getPages(): array
     {
+        if (auth()->check() && !auth()->user()->can('manage appointments')) {
+            abort(403, __('Insufficient permissions'));
+        }
+
         return [
             'index' => Pages\ListAppointments::route('/'),
             'create' => Pages\CreateAppointment::route('/create'),
