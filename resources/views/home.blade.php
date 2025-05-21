@@ -18,4 +18,17 @@
     </div>
 </section>
 
+<section class=" px-8">
+    <div class="mx-auto my-3 md:my-4 lg:my-5 container-shadow">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl text-center mb-5 font-roboto font-bold">
+            Openingstijden
+        </h1>
+
+        <div class="flex justify-center items-center">
+            <livewire:opening-times />
+        </div>
+
+    </div>
+</section>
+
 @endsection
