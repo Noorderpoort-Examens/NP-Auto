@@ -27,6 +27,10 @@
                     </a>
                 </ul>
             </div>
+            <div>
+                <h2 class="mb-6 text-sm font-semibold text-np-dark uppercase">Contact details</h2>
+                <livewire:contact-details :is_contact_page="false" />
+            </div>
         </div>
         <div class="px-4 pb-6 md:flex md:items-center md:justify-center">
             <span class="text-sm text-np-dark/50 sm:text-center">© 2025
