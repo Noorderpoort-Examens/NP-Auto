@@ -37,7 +37,7 @@ class Occasions extends Component
 
         $occasions = $this->is_archive
             ? $query->orderBy('created_at', 'desc')->paginate(12)
-            : $query->orderBy('created_at', 'desc')->take(4)->get();
+            : $query->orderBy('created_at', 'desc')->take(3)->get();
 
         return view('livewire.occasions', compact('occasions'));
     }
