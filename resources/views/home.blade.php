@@ -4,9 +4,9 @@
 
 @section('content')
 
-<section>
-    <div class="mx-auto px-4 sm:px-6 lg:px-8 my-3 md:my-4 lg:my-5">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl text-center mb-5 font-roboto font-bold">
+<section class="my-9">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl text-center mb-9 font-roboto font-bold">
             Meest recente occasions
         </h1>
 
