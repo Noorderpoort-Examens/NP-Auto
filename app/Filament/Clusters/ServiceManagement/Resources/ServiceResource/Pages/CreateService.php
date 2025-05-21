@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\ServiceResource\Pages;
+namespace App\Filament\Clusters\ServiceManagement\Resources\ServiceResource\Pages;
 
-use App\Filament\Resources\ServiceResource;
+use App\Filament\Clusters\ServiceManagement\Resources\ServiceResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateService extends CreateRecord

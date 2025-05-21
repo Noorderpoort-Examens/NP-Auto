@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Clusters\ServiceManagement\Resources;
 
-use App\Filament\Resources\ServiceResource\Pages;
+use App\Filament\Clusters\ServiceManagement;
+use App\Filament\Clusters\ServiceManagement\Resources\ServiceResource\Pages;
 use App\Models\Service;
+use App\Models\ServiceDuration;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -18,6 +20,8 @@ class ServiceResource extends Resource
     protected static ?string $model = Service::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    protected static ?string $cluster = ServiceManagement::class;
 
     public static function getPluralLabel(): ?string
     {
@@ -41,12 +45,11 @@ class ServiceResource extends Resource
                 TextInput::make('price')
                     ->numeric()
                     ->required(),
-                Select::make('time')
-                    ->required()
-                    ->options([
-                        'half_day' => 'Halve dag',
-                        'full_day' => 'Hele dag'
-                    ])
+                Select::make('service_duration_id')
+                    ->label('Service Duration')
+                    ->relationship('serviceDuration', 'name')
+                    ->options(ServiceDuration::all()->pluck('name', 'id'))
+                    ->required(),
             ]);
     }
 
@@ -58,14 +61,13 @@ class ServiceResource extends Resource
                     ->searchable(),
                 TextColumn::make('description'),
                 TextColumn::make('price'),
-                TextColumn::make('time'),
+                TextColumn::make('serviceduration.name')
+                ->label('Duration'),
             ])
             ->filters([
-                SelectFilter::make('time')
-                    ->options([
-                        'half_day' => 'halve dag',
-                        'full_day' => 'hele dag',
-                    ]),
+                SelectFilter::make('service_duration_id')
+                    ->label('Duration')
+                    ->relationship('serviceduration', 'name'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

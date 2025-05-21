@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
 {
-
     protected $fillable = [
         'firstname',
         'lastname',
@@ -15,7 +14,7 @@ class Reservation extends Model
         'occasion_id',
     ];
 
-    // we cant just save it as plain text
+    // we cant just save it as plain text due to privacy law
     protected $casts = [
         'phonenumber' => 'encrypted',
         'email' => 'encrypted',

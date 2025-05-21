@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Mechanic;
+use App\Models\ServiceDuration;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -38,5 +40,35 @@ class DatabaseSeeder extends Seeder
         $role = Role::create(['name' => 'admin']);
         $role->syncPermissions($permissions);
         $user->assignRole($role);
+
+
+        // the 2 timesets we were given and use, but can be expanded manually in the website itself
+        $serviceDurations = [
+            [
+                'name' => 'Halve dag',
+                'hours' => 12
+            ],
+            [
+                'name' => 'Hele dag',
+                'hours' => 24
+            ],
+        ];
+
+        foreach ($serviceDurations as $serviceDuration) {
+            ServiceDuration::create($serviceDuration);
+        }
+
+        // a list of placeholder mechanics
+        $mechanics = [
+            ['name' => 'Henkie'],
+            ['name' => 'Hansje'],
+            ['name' => 'Derkus'],
+            ['name' => 'Dirkus'],
+            ['name' => 'Dorkus'],
+        ];
+
+        foreach ($mechanics as $mechanic) {
+            Mechanic::create($mechanic);
+        }
     }
 }

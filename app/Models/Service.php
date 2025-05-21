@@ -10,6 +10,11 @@ class Service extends Model
         'title',
         'description',
         'price',
-        'time'
+        'service_duration_id',
     ];
+
+    public function serviceDuration()
+    {
+        return $this->belongsTo(ServiceDuration::class);
+    }
 }

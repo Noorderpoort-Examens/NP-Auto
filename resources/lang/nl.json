@@ -47,7 +47,7 @@
     "reservations": "Reservaties",
     "Reservation": "Reservatie",
     "reservation": "Reservatie",
-    
+
     "Opening Times": " Openingstijd",
     "Time": "tijd",
     "Day": "Dag",
@@ -58,6 +58,25 @@
     "Time": "Tijd",
     "Information": "Informatie",
     "Insufficient permissions": "Je hebt hier geen permissies voor",
+    "Hours": "Uren",
+    "Service durations": "Onderhoud tijdsduren",
+    "service durations": "Onderhoud tijdsduren",
+    "Service duration": "Onderhoud tijdsduur",
+    "service duration": "Onderhoud tijdsduur",
+    "service Duration": "Onderhoud tijdsduur",
+    "Service Duration": "Onderhoud tijdsduur",
+    "Duration": "Tijdsduur",
+    "duration": "Tijdsduur",
+    "Service management": "Onderhoud beheer",
+    "Client name": "Klant naam",
+    "Additional info": "bijzondere notities",
+    "Service type": "Onderhoud type",
+
+    "Date": "Datum",
+
+    "Appointments": "Afspraken",
+
+    "Appointment": "Afspraak",
 
     "pagination.next": "Volgende",
     "pagination.previous": "Vorige"
