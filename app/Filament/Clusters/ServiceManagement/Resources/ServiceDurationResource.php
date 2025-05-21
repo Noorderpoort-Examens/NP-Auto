@@ -35,7 +35,7 @@ class ServiceDurationResource extends Resource
         return $form
             ->schema([
                 TextInput::make('name')
-                    ->unique(IgnoreRecord: true)
+                    ->unique(ignoreRecord: true)
                     ->required(),
                 TextInput::make('hours')
                     ->integer()
