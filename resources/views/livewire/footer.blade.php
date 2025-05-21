@@ -9,19 +9,19 @@
                 <h2 class="mb-6 text-sm font-semibold text-np-dark uppercase">Navigatie links</h2>
                 <ul
                     class="grid sm:grid-cols-2 items-center gap-4 mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-                    <a class="hover:text-np-yellow transition duration-150 ease-in-out text-xs md:text-sm lg:text-base font-opensans text-nowrap text-np-dark"
+                    <a class="font-normal hover:text-np-yellow transition duration-150 ease-in-out text-xs md:text-sm lg:text-base font-opensans text-nowrap text-np-dark"
                         href="{{ route('home') }}">
                         Home
                     </a>
-                    <a class="hover:text-np-yellow transition duration-150 ease-in-out text-xs md:text-sm lg:text-base font-opensans text-nowrap text-np-dark"
+                    <a class="font-normal hover:text-np-yellow transition duration-150 ease-in-out text-xs md:text-sm lg:text-base font-opensans text-nowrap text-np-dark"
                         href="{{ route('home') }}">
                         Service & Onderhoud
                     </a>
-                    <a class="hover:text-np-yellow transition duration-150 ease-in-out text-xs md:text-sm lg:text-base font-opensans text-nowrap text-np-dark"
+                    <a class="font-normal hover:text-np-yellow transition duration-150 ease-in-out text-xs md:text-sm lg:text-base font-opensans text-nowrap text-np-dark"
                         href="{{ route('occasions.archive') }}">
                         Occasions
                     </a>
-                    <a class="hover:text-np-yellow transition duration-150 ease-in-out text-xs md:text-sm lg:text-base font-opensans text-nowrap text-np-dark"
+                    <a class="font-normal hover:text-np-yellow transition duration-150 ease-in-out text-xs md:text-sm lg:text-base font-opensans text-nowrap text-np-dark"
                         href="{{ route('contact') }}">
                         Contact
                     </a>
