@@ -1,5 +1,5 @@
 <footer class="relative bottom-0 left-0 bg-np-white rounded-lg container-shadow">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full p-4 ">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div class="grid sm:grid-cols-2 gap-4 sm:gap-8 px-4 py-6 lg:py-8 md:grid-cols-2">
             <div>
                 <h2 class="mb-6 text-lg md:text-xl lg:text-2xl font-semibold text-np-dark">Openingstijden</h2>
