@@ -10,7 +10,7 @@ $chunks = $openingTime->chunk(3);
     <div class="flex flex-col gap-4">
         @foreach ($chunk as $time)
         <div class="flex">
-            <p class="text-xs md:text-sm lg:text-base font-opensans">
+            <p class="text-xs md:text-sm lg:text-base font-opensans text-nowrap">
                 {{ $time->day }}
                 {{ Carbon::parse($time->start)->format('H:i') }}
                 tot
