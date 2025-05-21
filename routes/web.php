@@ -13,3 +13,5 @@ Route::view('/occasions/{occasion}', 'occasion-single')
 
 Route::view('/contact', 'contact')
     ->name('contact');
+
+Route::redirect('/admin', '/admin/dashboard');
