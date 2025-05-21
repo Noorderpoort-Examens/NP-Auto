@@ -33,8 +33,8 @@ class OccasionResource extends Resource
                     ->unique(ignoreRecord: true)
                     ->rule(new ValidateLicencePlate)
                     ->helperText('Format XX123X')
-                    ->readOnly(fn (string $context) => $context === 'edit')
-                    ->disabled(fn (string $context) => $context === 'edit'),
+                    ->readOnly(fn(string $context) => $context === 'edit')
+                    ->disabled(fn(string $context) => $context === 'edit'),
                 TextInput::make('advertisingtitle')
                     ->required(),
                 TextInput::make('askprice')
@@ -59,7 +59,7 @@ class OccasionResource extends Resource
                         Checkbox::make('reserved')
                             ->disabled(),
                     ])
-                    ->visible(fn (string $context) => $context === 'edit'),
+                    ->visible(fn(string $context) => $context === 'edit'),
                 FileUpload::make('images')
                     ->multiple()
                     ->image()
@@ -109,6 +109,10 @@ class OccasionResource extends Resource
 
     public static function getPages(): array
     {
+        if (auth()->check() && !auth()->user()->can('manage occasions')) {
+            abort(403, __('Insufficient permissions'));
+        }
+
         return [
             'index' => Pages\ListOccasions::route('/'),
             'create' => Pages\CreateOccasion::route('/create'),

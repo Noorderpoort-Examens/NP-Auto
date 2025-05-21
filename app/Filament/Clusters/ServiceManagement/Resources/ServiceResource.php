@@ -88,6 +88,10 @@ class ServiceResource extends Resource
 
     public static function getPages(): array
     {
+        if (auth()->check() && !auth()->user()->can('manage services')) {
+            abort(403, __('Insufficient permissions'));
+        }
+
         return [
             'index' => Pages\ListServices::route('/'),
             'create' => Pages\CreateService::route('/create'),

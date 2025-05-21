@@ -73,6 +73,10 @@ class MechanicResource extends Resource
 
     public static function getPages(): array
     {
+        if (auth()->check() && !auth()->user()->can('manage users')) {
+            abort(403, __('Insufficient permissions'));
+        }
+        
         return [
             'index' => Pages\ListMechanics::route('/'),
             'create' => Pages\CreateMechanic::route('/create'),
