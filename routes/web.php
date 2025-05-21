@@ -16,3 +16,6 @@ Route::view('/contact', 'contact')
 
 Route::view('/service', 'service')
     ->name('service');
+
+Route::redirect('/admin', '/admin/dashboard');
+
