@@ -5,6 +5,7 @@ namespace App\Filament\Clusters\ServiceManagement\Resources;
 use App\Filament\Clusters\ServiceManagement;
 use App\Filament\Clusters\ServiceManagement\Resources\ServiceDurationResource\Pages;
 use App\Models\ServiceDuration;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -15,7 +16,7 @@ class ServiceDurationResource extends Resource
 {
     protected static ?string $model = ServiceDuration::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-clock';
 
     protected static ?string $cluster = ServiceManagement::class;
 
@@ -33,7 +34,11 @@ class ServiceDurationResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('name')
+                    ->required(),
+                TextInput::make('hours')
+                    ->integer()
+                    ->required(),
             ]);
     }
 
