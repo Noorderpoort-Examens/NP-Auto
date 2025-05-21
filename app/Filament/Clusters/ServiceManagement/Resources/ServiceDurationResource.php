@@ -72,6 +72,10 @@ class ServiceDurationResource extends Resource
 
     public static function getPages(): array
     {
+        if (auth()->check() && !auth()->user()->can('manage services')) {
+            abort(403, __('Insufficient permissions'));
+        }
+
         return [
             'index' => Pages\ListServiceDurations::route('/'),
             'create' => Pages\CreateServiceDuration::route('/create'),
