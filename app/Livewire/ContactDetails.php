@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class ContactDetails extends Component
 {
+    public bool $is_contact_page = false;
+
     public function render()
     {
         $phonenumber = Information::where('type', 'phonenumber')->value('content');
