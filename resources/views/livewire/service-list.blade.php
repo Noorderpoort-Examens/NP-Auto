@@ -1,6 +1,4 @@
 <div class="mb-4 grid gap-4 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-
-
     @foreach ($services as $service)
     <div class="relative rounded-lg p-6 shadow-sm bg-np-dark/90 h-60">
         <a href="#" class="block group">
