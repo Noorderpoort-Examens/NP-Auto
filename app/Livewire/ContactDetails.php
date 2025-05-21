@@ -11,10 +11,14 @@ class ContactDetails extends Component
     {
         $phonenumber = Information::where('type', 'phonenumber')->value('content');
         $email = Information::where('type', 'email')->value('content');
+        $adress = Information::where('type', 'adress')->value('content');
+        $zipcode = Information::where('type', 'zipcode')->value('content');
 
         return view('livewire.contact-details', [
             'phonenumber' => $phonenumber,
             'email' => $email,
+            'adress' => $adress,
+            'zipcode' => $zipcode,
         ]);
     }
 }
