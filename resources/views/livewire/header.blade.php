@@ -48,11 +48,14 @@
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
                 {{ __('Home') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('occasions.archive')" :active="request()->routeIs('occasions.archive')" wire:navigate>
+                {{ __('Occasions') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('service')" :active="request()->routeIs('service')" wire:navigate>
+                {{ __('Serivce & Onderhoud') }}
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')" wire:navigate>
                 {{ __('Contact') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')" wire:navigate>
-                {{ __('Nieuws') }}
             </x-responsive-nav-link>
         </div>
     </div>
