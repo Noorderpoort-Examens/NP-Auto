@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('dashboard_accesses', function (Blueprint $table) {
             $table->id();
-            $table->string('role_name')->unique();
+            $table->foreignId('role_id')->unique()->constrained('roles')->onDelete('cascade');
             $table->boolean('can_access')->default(false);
             $table->timestamps();
         });
