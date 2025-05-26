@@ -3,10 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\DashboardAccess;
+use App\Models\Information;
 use App\Models\Mechanic;
+use App\Models\OpeningTime;
 use App\Models\ServiceDuration;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -19,10 +20,16 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $user = User::factory()->create([
+        $developmentUser = User::factory()->create([
             'name' => 'development',
             'email' => 'test@test.com',
             'password' => 'development'
+        ]);
+
+        $mechanicUser = User::factory()->create([
+            'name' => 'mechanic',
+            'email' => 'mechanic@test.com',
+            'password' => 'monteur'
         ]);
 
         $permissionNames = [
@@ -43,12 +50,15 @@ class DatabaseSeeder extends Seeder
             $permissions[] = $permission;
         }
 
-        $role = Role::create(['name' => 'admin']);
-        $role->syncPermissions($permissions);
-        $user->assignRole($role);
+        $adminRole = Role::create(['name' => 'admin']);
+        $adminRole->syncPermissions($permissions);
+        $developmentUser->assignRole($adminRole);
+
+        $mechanicRole = Role::create(['name' => 'monteur']);
+        $mechanicUser->assignRole($mechanicRole);
 
         DashboardAccess::create([
-            'role_id' => $role->id,
+            'role_id' => $adminRole->id,
             'can_access' => true,
         ]);
 
