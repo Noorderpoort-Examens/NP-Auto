@@ -15,7 +15,8 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->is('admin/login')) {
+        // Don't abort if the request (url) is going to login or logout
+        if ($request->is('admin/login' || $request->is('admin/logout'))) {
             return $next($request);
         }
 
