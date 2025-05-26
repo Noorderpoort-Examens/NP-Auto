@@ -61,7 +61,16 @@ class RoleResource extends Resource
                     ->badge()
                     ->separator(', '),
                 ToggleColumn::make('dashboardAccess.can_access')
-                    ->toggleable(),
+                    ->disabled(fn($record) => $record->name === 'admin')
+                    ->afterStateUpdated(function ($state, $record) {
+                        if ($record->name === 'admin') {
+                            return; // Do nothing if the record name equals to admin
+                        }
+
+                        $record->dashboardAccess()->update([
+                            'can_access' => $state,
+                        ]);
+                    }),
             ])
             ->filters([])
             ->actions([
