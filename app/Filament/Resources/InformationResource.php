@@ -33,7 +33,8 @@ class InformationResource extends Resource
         return $form
             ->schema([
                 TextInput::make('type')
-                    ->required(),
+                    ->required()
+                    ->unique(ignoreRecord: true),
 
                 RichEditor::make('content')
                     ->label('Post Content')
