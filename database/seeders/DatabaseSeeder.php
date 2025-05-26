@@ -90,5 +90,18 @@ class DatabaseSeeder extends Seeder
         foreach ($mechanics as $mechanic) {
             Mechanic::create($mechanic);
         }
+
+        $openingTimes = [
+            ['day' => 'maandag', 'start' => '09:00', 'end' => '18:00'],
+            ['day' => 'dinsdag', 'start' => '09:00', 'end' => '18:00'],
+            ['day' => 'woensdag', 'start' => '09:00', 'end' => '18:00'],
+            ['day' => 'donderdag', 'start' => '09:00', 'end' => '18:00'],
+            ['day' => 'vrijdag', 'start' => '09:00', 'end' => '18:00'],
+            ['day' => 'zaterdag', 'start' => '10:00', 'end' => '17:00'],
+        ];
+
+        foreach ($openingTimes as $time) {
+            OpeningTime::create($time);
+        }
     }
 }
