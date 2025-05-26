@@ -79,5 +79,7 @@
     "Appointment": "Afspraak",
 
     "pagination.next": "Volgende",
-    "pagination.previous": "Vorige"
+    "pagination.previous": "Vorige",
+
+    "Dashboard access": "Dashboard toegang"
 }

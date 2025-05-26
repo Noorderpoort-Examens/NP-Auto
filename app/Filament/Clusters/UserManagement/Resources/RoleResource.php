@@ -11,6 +11,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 
 class RoleResource extends Resource
@@ -43,7 +44,6 @@ class RoleResource extends Resource
                 TextInput::make('name')
                     ->required()
                     ->unique(ignoreRecord: true),
-
                 CheckboxList::make('permissions')
                     ->relationship('permissions', 'name')
                     ->columns(2)
@@ -59,7 +59,18 @@ class RoleResource extends Resource
                     ->sortable(),
                 TextColumn::make('permissions.name')
                     ->badge()
-                    ->separator(', ')
+                    ->separator(', '),
+                ToggleColumn::make('dashboardAccess.can_access')
+                    ->disabled(fn($record) => $record->name === 'admin')
+                    ->afterStateUpdated(function ($state, $record) {
+                        if ($record->name === 'admin') {
+                            return; // Do nothing if the record name equals to admin
+                        }
+
+                        $record->dashboardAccess()->update([
+                            'can_access' => $state,
+                        ]);
+                    }),
             ])
             ->filters([])
             ->actions([

@@ -7,6 +7,8 @@ use Filament\Forms\Components\Placeholder;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Filters\BaseFilter;
 use Illuminate\Support\ServiceProvider;
+use App\Models\Role;
+use App\Observers\RoleObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Role::observe(RoleObserver::class);
+
         //translates manually made fields such as form and column labels
         $this->autoTranslateLabels();
     }
