@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\DashboardAccess;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,18 @@ class AdminMiddleware
             return $next($request);
         }
 
-        if (!Auth::check() || !Auth::user()->hasRole(['admin', 'mechanic'])) {
+        if (!Auth::check()) {
+            abort(403, 'Je hebt geen toegang tot deze pagina.');
+        }
+
+        $user = Auth::user();
+        $roles = $user->getRoleNames();
+
+        $allowed = DashboardAccess::whereIn('role_name', $roles)
+            ->where('can_access', true)
+            ->exists();
+
+        if (!$allowed) {
             abort(403, 'Je hebt geen toegang tot deze pagina.');
         }
 
