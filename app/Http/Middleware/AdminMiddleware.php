@@ -24,9 +24,13 @@ class AdminMiddleware
         }
 
         $user = Auth::user();
-        $roles = $user->getRoleNames();
+        $roles = $user->roles;
 
-        $allowed = DashboardAccess::whereIn('role_name', $roles)
+        // Get all role IDs of the logged in user
+        $roleIds = $roles->pluck('id')->toArray();
+
+        // Checks if a record with role_id en can_access true exists in $roleIds
+        $allowed = DashboardAccess::whereIn('role_id', $roleIds)
             ->where('can_access', true)
             ->exists();
 
