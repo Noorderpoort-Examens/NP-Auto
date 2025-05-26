@@ -9,4 +9,9 @@ use Spatie\Permission\Models\Role as SpatieRole;
 class Role extends SpatieRole
 {
     use HasFactory;
+
+    public function dashboardAccess()
+    {
+        return $this->hasOne(DashboardAccess::class);
+    }
 }
