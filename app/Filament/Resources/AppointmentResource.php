@@ -48,6 +48,7 @@ class AppointmentResource extends Resource
                     ->label('Additional info'),
                 DatePicker::make('date')
                     ->native(false) //disableddates does not work with native datepicker
+                    ->displayFormat('d-M-Y')
                     ->disabledDates(function () {
                         //you dont need to check to see if you can plan in a date for a day that has passed.
                         $appointments = Appointment::whereDate('date', '>=', now()->toDateString())->get();
@@ -89,7 +90,7 @@ class AppointmentResource extends Resource
                     ->label('Client name')
                     ->searchable(),
                 TextColumn::make('date')
-                    ->date('Y-M-d')
+                    ->date('d-M-Y')
                     ->searchable(),
                 TextColumn::make('mechanic.name')
                     ->label('Mechanic')
