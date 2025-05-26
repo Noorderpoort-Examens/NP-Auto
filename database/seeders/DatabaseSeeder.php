@@ -47,8 +47,9 @@ class DatabaseSeeder extends Seeder
         $role->syncPermissions($permissions);
         $user->assignRole($role);
 
-        DashboardAccess::insert([
-            ['role_name' => 'admin', 'can_access' => true],
+        DashboardAccess::create([
+            'role_id' => $role->id,
+            'can_access' => true,
         ]);
 
         // the 2 timesets we were given and use, but can be expanded manually in the website itself
