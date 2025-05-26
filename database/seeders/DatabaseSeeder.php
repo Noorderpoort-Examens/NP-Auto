@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\DashboardAccess;
 use App\Models\Mechanic;
 use App\Models\ServiceDuration;
 use App\Models\User;
@@ -46,6 +47,9 @@ class DatabaseSeeder extends Seeder
         $role->syncPermissions($permissions);
         $user->assignRole($role);
 
+        DashboardAccess::insert([
+            ['role_name' => 'admin', 'can_access' => true],
+        ]);
 
         // the 2 timesets we were given and use, but can be expanded manually in the website itself
         $serviceDurations = [
