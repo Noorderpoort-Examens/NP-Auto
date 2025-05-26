@@ -91,6 +91,27 @@ class DatabaseSeeder extends Seeder
             Mechanic::create($mechanic);
         }
 
+        Information::create([
+            'type' => 'general_info',
+            'content' => "<p>NP auto is een klein autobedrijf dat is voortgekomen uit een hobbymatige liefde voor auto's. Door goedkope kosten kunnen wij voor een minimale marge auto's weer doorzetten naar de klant.</p><p><br></p><ul><li>Door onze kosten zo laag mogelijk te houden blijven de autoprijzen ook laag</li><li>Onze monteurs hebben meer dan 15 jaar ervaring</li><li>Voor alle merken kunt u bij ons terecht voor service en onderhoud</li><li>We zijn RDW erkend</li></ul>"
+        ]);
+        Information::create([
+            'type' => 'phonenumber',
+            'content' => '0681673336'
+        ]);
+        Information::create([
+            'type' => 'email',
+            'content' => 'info@np-auto.nl'
+        ]);
+        Information::create([
+            'type' => 'adress',
+            'content' => 'Muntinglaan 3'
+        ]);
+        Information::create([
+            'type' => 'zipcode',
+            'content' => '9727 JT Groningen'
+        ]);
+
         $openingTimes = [
             ['day' => 'maandag', 'start' => '09:00', 'end' => '18:00'],
             ['day' => 'dinsdag', 'start' => '09:00', 'end' => '18:00'],
