@@ -77,6 +77,11 @@ class DatabaseSeeder extends Seeder
             'can_access' => true,
         ]);
 
+        DashboardAccess::create([
+            'role_id' => $mechanicRole->id,
+            'can_access' => true,
+        ]);
+
         // the 2 timesets we were given and use, but can be expanded manually in the website itself
         $serviceDurations = [
             [
