@@ -32,6 +32,12 @@ class DatabaseSeeder extends Seeder
             'password' => 'monteur'
         ]);
 
+        $testUser = User::factory()->create([
+            'name' => 'test',
+            'email' => 'test@example.com',
+            'password' => 'test'
+        ]);
+
         $permissionNames = [
             'manage users',
             'manage roles',
@@ -57,8 +63,17 @@ class DatabaseSeeder extends Seeder
         $mechanicRole = Role::create(['name' => 'monteur']);
         $mechanicUser->assignRole($mechanicRole);
 
+        $testRole = Role::create(['name' => 'test']);
+        $testRole->syncPermissions($permissions);
+        $testUser->assignRole($testRole);
+
         DashboardAccess::create([
             'role_id' => $adminRole->id,
+            'can_access' => true,
+        ]);
+
+        DashboardAccess::create([
+            'role_id' => $testRole->id,
             'can_access' => true,
         ]);
 
