@@ -38,6 +38,12 @@ class DatabaseSeeder extends Seeder
             'password' => 'test'
         ]);
 
+        $user = User::factory()->create([
+            'name' => 'user',
+            'email' => 'user@example.com',
+            'password' => 'user',
+        ]);
+
         $permissionNames = [
             'manage users',
             'manage roles',
@@ -81,68 +87,5 @@ class DatabaseSeeder extends Seeder
             'role_id' => $mechanicRole->id,
             'can_access' => true,
         ]);
-
-        // the 2 timesets we were given and use, but can be expanded manually in the website itself
-        $serviceDurations = [
-            [
-                'name' => 'Halve dag',
-                'hours' => 12
-            ],
-            [
-                'name' => 'Hele dag',
-                'hours' => 24
-            ],
-        ];
-
-        foreach ($serviceDurations as $serviceDuration) {
-            ServiceDuration::create($serviceDuration);
-        }
-
-        // a list of placeholder mechanics
-        $mechanics = [
-            ['name' => 'Henkie'],
-            ['name' => 'Hansje'],
-            ['name' => 'Derkus'],
-            ['name' => 'Dirkus'],
-            ['name' => 'Dorkus'],
-        ];
-
-        foreach ($mechanics as $mechanic) {
-            Mechanic::create($mechanic);
-        }
-
-        Information::create([
-            'type' => 'general_info',
-            'content' => "<p>NP auto is een klein autobedrijf dat is voortgekomen uit een hobbymatige liefde voor auto's. Door goedkope kosten kunnen wij voor een minimale marge auto's weer doorzetten naar de klant.</p><p><br></p><ul><li>Door onze kosten zo laag mogelijk te houden blijven de autoprijzen ook laag</li><li>Onze monteurs hebben meer dan 15 jaar ervaring</li><li>Voor alle merken kunt u bij ons terecht voor service en onderhoud</li><li>We zijn RDW erkend</li></ul>"
-        ]);
-        Information::create([
-            'type' => 'phonenumber',
-            'content' => '0681673336'
-        ]);
-        Information::create([
-            'type' => 'email',
-            'content' => 'info@np-auto.nl'
-        ]);
-        Information::create([
-            'type' => 'adress',
-            'content' => 'Muntinglaan 3'
-        ]);
-        Information::create([
-            'type' => 'zipcode',
-            'content' => '9727 JT Groningen'
-        ]);
-
-        $openingTimes = [
-            ['day' => 'maandag', 'start' => '09:00', 'end' => '18:00'],
-            ['day' => 'dinsdag', 'start' => '09:00', 'end' => '18:00'],
-            ['day' => 'woensdag', 'start' => '09:00', 'end' => '18:00'],
-            ['day' => 'donderdag', 'start' => '09:00', 'end' => '18:00'],
-            ['day' => 'vrijdag', 'start' => '09:00', 'end' => '18:00'],
-            ['day' => 'zaterdag', 'start' => '10:00', 'end' => '17:00'],
-        ];
-
-        foreach ($openingTimes as $time) {
-            OpeningTime::create($time);
-        }
     }
 }
